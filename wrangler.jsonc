@@ -1,0 +1,10 @@
+{
+  // Static-assets-only Worker: no server code, just serves the prerendered
+  // SvelteKit output in build/. Having this file stops `wrangler deploy`
+  // from auto-running `sv add` and switching us to adapter-cloudflare.
+  "name": "blog",
+  "compatibility_date": "2026-06-19",
+  "assets": {
+    "directory": "build"
+  }
+}
