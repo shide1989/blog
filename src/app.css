@@ -1,0 +1,183 @@
+:root {
+	--bg: #fbfbfa;
+	--fg: #1a1a1a;
+	--muted: #6b6b6b;
+	--accent: #c8553d;
+	--border: #e7e7e4;
+	--code-bg: #f2f2ef;
+	--maxw: 42rem;
+	--font: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+	--mono: ui-monospace, 'SF Mono', 'Cascadia Code', Menlo, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #16161a;
+		--fg: #e8e8e6;
+		--muted: #9a9a96;
+		--accent: #e0795f;
+		--border: #2a2a30;
+		--code-bg: #20202a;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-family: var(--font);
+	color: var(--fg);
+	background: var(--bg);
+	line-height: 1.65;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	margin: 0;
+}
+
+a {
+	color: var(--accent);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.site {
+	max-width: var(--maxw);
+	margin: 0 auto;
+	padding: 2rem 1.25rem 4rem;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+header {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	padding-bottom: 1.5rem;
+	margin-bottom: 2.5rem;
+	border-bottom: 1px solid var(--border);
+}
+
+.brand {
+	font-weight: 700;
+	font-size: 1.15rem;
+	color: var(--fg);
+}
+
+nav a {
+	margin-left: 1rem;
+	color: var(--muted);
+}
+
+main {
+	flex: 1;
+}
+
+h1 {
+	font-size: 1.9rem;
+	line-height: 1.2;
+	margin: 0 0 1.5rem;
+}
+
+/* Post list */
+.posts {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.posts li {
+	padding: 1rem 0;
+	border-bottom: 1px solid var(--border);
+}
+
+.posts a {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 1rem;
+	color: var(--fg);
+}
+
+.posts .title {
+	font-weight: 600;
+}
+
+.posts time {
+	color: var(--muted);
+	font-size: 0.85rem;
+	white-space: nowrap;
+}
+
+.posts .desc {
+	margin: 0.35rem 0 0;
+	color: var(--muted);
+	font-size: 0.95rem;
+}
+
+/* Single post */
+.post-head {
+	margin-bottom: 2rem;
+}
+
+.post-head h1 {
+	margin-bottom: 0.5rem;
+}
+
+.post-head time {
+	color: var(--muted);
+	font-size: 0.9rem;
+}
+
+.prose > :first-child {
+	margin-top: 0;
+}
+
+.prose h2 {
+	margin-top: 2.5rem;
+	font-size: 1.35rem;
+}
+
+.prose pre {
+	background: var(--code-bg);
+	padding: 1rem;
+	border-radius: 8px;
+	overflow-x: auto;
+	font-size: 0.9rem;
+}
+
+.prose code {
+	font-family: var(--mono);
+	font-size: 0.9em;
+}
+
+.prose :not(pre) > code {
+	background: var(--code-bg);
+	padding: 0.15em 0.4em;
+	border-radius: 4px;
+}
+
+.prose blockquote {
+	margin: 1.5rem 0;
+	padding-left: 1rem;
+	border-left: 3px solid var(--border);
+	color: var(--muted);
+}
+
+.back {
+	margin-top: 3rem;
+}
+
+footer {
+	margin-top: 4rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--border);
+	color: var(--muted);
+	font-size: 0.85rem;
+}
